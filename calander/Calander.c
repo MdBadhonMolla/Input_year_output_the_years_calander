@@ -30,11 +30,16 @@ int main()
     char *day[]={"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
     int size_day= sizeof(day)/sizeof(day[0]);
 
-    int *mounth_day[]={31,28,31,30,31,30,31,30,31,30,31,30};
+    int *mounth_day[]={31,28,31,30,31,30,31,31,30,31,30,31};
+
+
+    if ((input % 4 == 0 && input % 100 != 0) || (input % 400 == 0)) {
+        mounth_day[1] = 29;
+    }
 
 
 
-int i,j, count=0,z=0;
+	int i,j, count=0,z=0;
 
 
 
@@ -60,7 +65,7 @@ int i,j, count=0,z=0;
 					if(i==0 && givingYear>counter)
 					{
 						counter++;
-						printf("#\t");
+						printf(" \t");
 						z++;
 						a=0;
 						continue;
